@@ -1,0 +1,43 @@
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Captured photos, generated artwork and print output
+runtime/
+sessions/
+renders/
+
+# Application bundles and release archives
+build/
+dist/
+*.exe
+*.dll
+*.pyd
+*.zip
+*.7z
+
+# Local credentials and certificates
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Local tools, logs and temporary files
+.idea/
+.vscode/
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini

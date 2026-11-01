@@ -1,0 +1,36 @@
+QMainWindow, QWidget#root { background: #f8f9fc; color: #1d283a; }
+QWidget { font-family: "Microsoft YaHei"; font-size: 14px; }
+QLabel { background: transparent; color: #1d283a; }
+QLabel#brand { font-size: 30px; font-weight: 700; }
+QLabel#eyebrow { font-size: 11px; color: #8992a1; }
+QLabel#date { font-size: 12px; color: #727c8d; }
+QLabel#styleTitle { font-size: 28px; font-weight: 700; }
+QLabel#counter { font-size: 16px; color: #2860d9; font-weight: 600; }
+QLabel#pageTitle { font-size: 24px; font-weight: 700; }
+QLabel#subtitle { color: #626e81; font-size: 14px; }
+QStackedWidget, QWidget#page { background: transparent; border: none; }
+QToolButton#step { background: transparent; color: #8b94a3; border: none; border-bottom: 2px solid #e4e8ef; padding: 12px 4px; font-size: 14px; font-weight: 600; }
+QToolButton#step:checked { border-bottom-color: #2860d9; color: #2860d9; }
+QToolButton#step:disabled { color: #a9b0bc; }
+QToolButton#step:checked:disabled { color: #2860d9; }
+QToolButton#iconButton { border: 1px solid #dce1eb; background: #ffffff; border-radius: 6px; }
+QToolButton#iconButton:hover { background: #edf3ff; border-color: #a2b8e7; }
+QToolButton#iconButton:pressed { background: #dfe9fc; }
+QToolButton#iconButton:disabled { background: #f0f2f6; border-color: #e5e8ee; }
+QPushButton { min-height: 52px; border-radius: 6px; border: 1px solid #d6dce6; background: #ffffff; color: #273344; font-size: 17px; font-weight: 600; padding: 0 20px; }
+QPushButton:hover { background: #edf3ff; border-color: #a2b8e7; }
+QPushButton:pressed { background: #e1eafa; }
+QPushButton#primary { background: #2860d9; border-color: #2860d9; color: #ffffff; }
+QPushButton#primary:hover { background: #3470ea; }
+QPushButton#primary:pressed { background: #1b4fbe; }
+QPushButton:disabled, QPushButton#primary:disabled { background: #e9edf4; border-color: #e9edf4; color: #98a2b3; }
+QSpinBox { border: 1px solid #d6dce6; border-radius: 6px; padding: 0; background: #ffffff; color: #273344; min-height: 46px; font-size: 20px; }
+QLabel#progressTitle { font-size: 26px; font-weight: 700; }
+QFrame#progressRow { border: none; border-bottom: 1px solid #e6eaf1; background: transparent; }
+QLabel#progressStage { color: #788296; font-size: 15px; }
+QLabel#progressStage[active="true"] { color: #2860d9; font-weight: 600; }
+QLabel#stageStatus { color: #8b94a3; font-size: 12px; }
+QLabel#stageStatus[active="true"] { color: #2860d9; }
+QLabel#errorText { font-size: 18px; color: #4c5b70; }
+QLabel#message { font-size: 13px; color: #626e81; }
+QLabel#footer { color: #8993a3; font-size: 11px; }

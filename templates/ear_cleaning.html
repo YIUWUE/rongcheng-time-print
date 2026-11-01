@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>采耳堂 · 价目牌版（A4）</title>
+<style>
+@page { size: A4; margin: 0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#E4E0D6;display:flex;justify-content:center;padding:28px 0;
+     font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:#2C2A26}
+.paper{width:210mm;height:297mm;background:#F7F3E9;padding:9mm 14mm 7mm;
+       box-shadow:0 10px 48px rgba(50,40,25,.25);position:relative;overflow:hidden}
+/* 外框：老招牌的双线边框 */
+.frame{position:absolute;inset:6mm;border:2.5px solid #2F6B4F;outline:1px solid #2F6B4F;outline-offset:3px}
+.inner{position:relative;z-index:2}
+
+.duo{display:flex;gap:9mm;margin-top:10px;align-items:flex-start;justify-content:space-between}
+/* 关键：竖排容器里 flex 主轴要走"从右往左"，故用 column */
+.vsign{writing-mode:vertical-rl;height:140mm;display:flex;flex-direction:column;
+       align-items:flex-start;gap:6mm;padding-top:4mm}
+.v-name{font-size:44px;font-weight:900;letter-spacing:0;color:#2F6B4F;line-height:1}
+.v-sub{font-size:15px;letter-spacing:0;color:#C0392B;font-weight:900}
+.v-top{font-size:12.5px;letter-spacing:0;color:#7E8C7F;font-weight:700}
+.v-en{font-size:10px;letter-spacing:0;color:#A8B0A6;text-orientation:upright}
+.photo{flex:0 0 auto}
+.photo img{height:140mm;width:auto;display:block;box-shadow:0 3px 14px rgba(50,40,25,.16)}
+
+/* ---------- 价目表（全宽，保持原样） ---------- */
+.menu{margin-top:9px;border-top:2px solid #2F6B4F;border-bottom:2px solid #2F6B4F;padding:8px 0}
+.menu .t{text-align:center;font-size:13px;font-weight:900;letter-spacing:0;color:#2F6B4F;margin-bottom:7px}
+.row{display:flex;align-items:baseline;font-size:14px;font-weight:700;margin-bottom:5px;padding:0 6mm}
+.row .nm{white-space:nowrap}
+.row .nm small{font-size:11.5px;color:#8A8578;font-weight:400;margin-left:5px;letter-spacing:0}
+.row .dots{flex:1;border-bottom:1.5px dotted #B9B3A2;margin:0 7px;transform:translateY(-3px)}
+.row .pr{color:#C0392B;font-weight:900;white-space:nowrap}
+.row.hi .nm{color:#C0392B}
+
+/* ---------- 说明双栏 ---------- */
+.body{column-count:2;column-gap:9mm;column-rule:1px solid #E0DACA;
+      margin-top:10px;font-size:13.5px;line-height:1.78;text-align:justify}
+.body p{margin-bottom:6px}
+.body p:first-child::first-letter{font-size:28px;font-weight:900;color:#2F6B4F;float:left;line-height:1;padding:2px 6px 0 0}
+.tag{font-weight:900;color:#C0392B;margin-right:4px}
+
+/* ---------- 底部条（全宽，保持原样） ---------- */
+.bar{margin-top:9px;background:#2F6B4F;color:#F7F3E9;font-size:13px;padding:7px 14px;line-height:1.6}
+.bar b{color:#FFD9A0;margin-right:8px;font-weight:900}
+
+/* ---------- 页脚 ---------- */
+.foot{position:absolute;left:16mm;right:16mm;bottom:10mm;display:flex;
+      justify-content:space-between;font-size:12px;color:#7E8C7F;font-weight:700;letter-spacing:0;z-index:2}
+.foot b{color:#2F6B4F}
+
+@media print{body{padding:0;background:#fff}.paper{box-shadow:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<link href="data:," rel="icon"/><style id="runtime-print-layout">
+@page { size: A4 portrait; margin: 0; }
+html,body { width:210mm!important; height:297mm!important; margin:0!important; padding:0!important; background:transparent!important; }
+body { display:block!important; overflow:hidden!important; }
+#newspaper-root { margin:0!important; width:210mm!important; height:297mm!important; box-shadow:none!important; outline:none!important; }
+* { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; letter-spacing:0!important; }
+.masthead-top { padding-right:18mm; }
+#ai-photo { object-fit:cover!important; object-position:50% 50%!important; filter:none!important; }
+.switch { display:none!important; }
+.photo{min-width:0;flex:1;overflow:hidden}.photo img{width:100%!important;height:119mm!important;object-fit:cover}.body{font-size:12px!important;line-height:1.7!important}.foot{font-size:9px!important;gap:3mm}.v-top{font-size:9px!important}
+</style></head>
+<body>
+<div class="paper" id="newspaper-root">
+<div class="frame"></div>
+<div class="inner">
+<div class="duo">
+<div class="vsign">
+<div class="v-name">采耳堂</div>
+<div class="v-sub">明码实价 · 耳根一酥</div>
+<div class="v-top">宽窄巷子 · 老手艺</div>
+<div class="v-en">CAI ER TANG</div>
+</div>
+<div class="photo"><img alt="采耳现场" id="ai-photo" src="__PHOTO_URI__"/></div>
+</div>
+<div class="menu">
+<div class="t">服 务 项 目</div>
+<div class="row"><div class="nm">掏耳<small>基础清洁</small></div><div class="dots"></div><div class="pr">30 元</div></div>
+<div class="row"><div class="nm">洗耳<small>温汤冲洗</small></div><div class="dots"></div><div class="pr">40 元</div></div>
+<div class="row"><div class="nm">鹅毛棒<small>酥麻入门</small></div><div class="dots"></div><div class="pr">20 元</div></div>
+<div class="row"><div class="nm">音叉震耳<small>当啷一响</small></div><div class="dots"></div><div class="pr">15 元</div></div>
+<div class="row"><div class="nm">耳道 SPA<small>含头灯深层</small></div><div class="dots"></div><div class="pr">68 元</div></div>
+<div class="row hi"><div class="nm">安逸全套<small>竹椅一下午 · 含盖碗茶</small></div><div class="dots"></div><div class="pr">88 元</div></div>
+</div>
+<div class="body">
+<p><span class="tag">身世</span>采耳古称"巢窝"，汉代宫廷已有专职技师，唐代木雕便见此景，明末清初随茶馆流入民间。论资历，比你爷爷的爷爷还老。</p>
+<p><span class="tag">版图</span>今天的成都坐拥一万多家茶馆，数量全国第一。师傅提着头灯、摇着音叉穿行其间，"当啷"一响，就是这座城最温柔的揽客信号。</p>
+<p><span class="tag">兵器</span>耳扒、鹅毛棒、铗子、震子、刮耳刀、音叉、孔雀羽——师傅手里那串发抖的家伙事儿，人称十八般兵器。</p>
+<p><span class="tag">正名</span>2016 年，全国首个采耳文化协会在成都成立，这门手艺列入非遗。别再叫人家"掏耳朵的"，这是有师承的正经听觉按摩。</p>
+</div>
+<div class="bar">⚡ <b>堂内告示</b> 体验本项目时若发出无法抑制的"嘿嘿"傻笑，属正常现象，师傅不予劝阻，围观者请自备竹椅。</div>
+</div>
+<div class="foot">
+<span><b>采耳堂</b> · 宽窄巷子 3 号院<br/><time data-live-field="date-time"></time></span>
+<span>安逸 · 酥到骨子里 · 上午十点开门，下午随时打烊</span>
+</div>
+</div>
+</body>
+</html>

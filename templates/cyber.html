@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>蓉城时光印 · 双子塔赛博特刊（A4竖版）</title>
+<style>
+  :root{
+    --paper:#0d0f1e;
+    --paper-dark:#141833;
+    --ink:#e8ecff;
+    --ink-soft:#9aa3c7;
+    --neon-cyan:#00e5ff;
+    --neon-pink:#ff2d95;
+    --neon-purple:#8a7bff;
+    --grid:rgba(0,229,255,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#05060d;}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;
+    color:var(--ink);
+    display:flex;justify-content:center;
+    padding:24px 12px;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255,45,149,.12), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(0,229,255,.10), transparent 45%);
+  }
+
+  /* ===== A4 竖版纸面：210mm × 297mm ===== */
+  .newspaper{
+    width:210mm;
+    height:297mm;
+    background:var(--paper);
+    background-image:
+      linear-gradient(rgba(0,229,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,.045) 1px, transparent 1px),
+      radial-gradient(ellipse at 12% 4%, rgba(138,123,255,.16), transparent 50%),
+      radial-gradient(ellipse at 92% 96%, rgba(255,45,149,.14), transparent 50%);
+    background-size:6mm 6mm,6mm 6mm,auto,auto;
+    box-shadow:0 12px 40px rgba(0,229,255,.22), 0 0 60px rgba(255,45,149,.15);
+    border:1px solid rgba(0,229,255,.5);
+    outline:1px solid rgba(255,45,149,.35);
+    outline-offset:2mm;
+    padding:8mm 9mm 7mm;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .newspaper::before{
+    content:"";position:absolute;inset:3mm;
+    border:1px solid rgba(0,229,255,.35);
+    pointer-events:none;
+  }
+
+  /* ===== 报头 ===== */
+  .masthead{
+    text-align:center;
+    border-bottom:2px solid var(--neon-cyan);
+    box-shadow:0 1px 0 rgba(255,45,149,.6);
+    padding-bottom:2.2mm;
+    position:relative;
+    flex:none;
+  }
+  .masthead-top{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-size:8px;letter-spacing:0;color:var(--ink-soft);
+  }
+  .masthead-top .tag{color:var(--neon-pink);text-shadow:0 0 6px rgba(255,45,149,.8);}
+  .masthead h1{
+    font-size:34px;
+    letter-spacing:0;
+    font-weight:900;
+    margin:1.5mm 0 0.5mm;
+    color:#fff;
+    text-shadow:
+      0 0 4px rgba(0,229,255,.9),
+      0 0 12px rgba(0,229,255,.55),
+      2.5px 2.5px 0 rgba(255,45,149,.55);
+  }
+  .masthead .subtitle{
+    font-size:9.5px;letter-spacing:0;color:var(--neon-cyan);
+    text-shadow:0 0 8px rgba(0,229,255,.6);
+  }
+  .date-bar{
+    display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid rgba(0,229,255,.5);
+    margin-top:2mm;
+    padding:1.2mm 1mm;
+    font-size:8px;letter-spacing:0;
+    color:var(--ink-soft);
+  }
+  .date-bar .issue{font-weight:700;color:var(--neon-cyan);}
+  .seal-stamp{
+    position:absolute;right:2mm;top:0.5mm;
+    width:12mm;height:12mm;
+    border:2px solid var(--neon-pink);
+    border-radius:1.5mm;
+    color:var(--neon-pink);
+    display:flex;align-items:center;justify-content:center;
+    font-size:9.5px;font-weight:900;letter-spacing:0;
+    writing-mode:vertical-rl;
+    transform:rotate(8deg);
+    box-shadow:0 0 8px rgba(255,45,149,.55), inset 0 0 4px rgba(255,45,149,.3);
+    text-shadow:0 0 5px rgba(255,45,149,.8);
+  }
+
+  /* ===== 主视觉区 ===== */
+  .hero{
+    display:grid;
+    grid-template-columns:57% 1fr;
+    gap:5mm;
+    padding:3.5mm 1mm 3mm;
+    border-bottom:1px solid rgba(0,229,255,.4);
+    flex:none;
+  }
+  .hero-figure{
+    border:2mm solid #05060d;
+    outline:1px solid var(--neon-cyan);
+    box-shadow:0 0 10px rgba(0,229,255,.5), 0 0 24px rgba(255,45,149,.25);
+    padding:1.5mm;
+    position:relative;
+    transform:rotate(-.4deg);
+    align-self:start;
+    background:#05060d;
+  }
+  .hero-figure img{
+    width:100%;display:block;
+  }
+  .hero-figure .photo-tag{
+    position:absolute;left:-2mm;top:-2.5mm;
+    background:var(--neon-pink);color:#05060d;
+    font-size:7.5px;font-weight:900;letter-spacing:0;
+    padding:1mm 2.5mm;
+    transform:rotate(-3deg);
+    box-shadow:0 0 8px rgba(255,45,149,.8);
+  }
+  .hero-figure .scan{
+    position:absolute;left:0;right:0;top:0;bottom:0;
+    background:repeating-linear-gradient(0deg, rgba(0,229,255,.05) 0 1px, transparent 1px 4px);
+    pointer-events:none;
+  }
+  .hero-side{display:flex;flex-direction:column;min-width:0;}
+  .hero-side .kicker{
+    font-size:8px;letter-spacing:0;color:var(--neon-pink);
+    text-shadow:0 0 6px rgba(255,45,149,.6);
+    border-bottom:1px solid rgba(0,229,255,.4);
+    padding-bottom:1.2mm;margin-bottom:2mm;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .headline{
+    font-size:32px;font-weight:900;line-height:1.3;
+    letter-spacing:0;
+    margin-bottom:2.5mm;
+    color:#fff;
+    text-shadow:0 0 6px rgba(0,229,255,.75), 2px 2px 0 rgba(255,45,149,.5);
+  }
+  .headline span{color:var(--neon-cyan);text-shadow:0 0 8px rgba(0,229,255,.9);}
+  .hero-text-row{
+    display:flex;gap:3mm;flex:1;min-height:0;
+  }
+  .lede{
+    flex:1;min-width:0;
+    font-size:10.8px;line-height:1.95;text-align:justify;
+    text-indent:2em;color:var(--ink);
+  }
+  .lede::first-letter{
+    font-size:20px;font-weight:900;float:left;line-height:1;
+    margin:1mm 1.6mm 0 0;color:var(--neon-pink);
+    text-shadow:0 0 6px rgba(255,45,149,.8);
+  }
+  .vertical-poem{
+    flex:none;
+    writing-mode:vertical-rl;
+    font-size:11.5px;font-weight:700;line-height:2.1;letter-spacing:0;
+    color:var(--neon-cyan);
+    text-shadow:0 0 6px rgba(0,229,255,.55);
+    border-left:1px solid rgba(0,229,255,.4);
+    padding-left:3mm;
+    align-self:stretch;
+    display:flex;
+    align-items:flex-start;
+  }
+  .vertical-poem b{font-size:11.5px;color:#fff;text-shadow:0 0 6px rgba(255,45,149,.8);}
+
+  /* ===== 栏目区 ===== */
+  .columns{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    flex:1;
+    min-height:0;
+  }
+  .col{
+    padding:3mm 2.8mm 2mm;
+    overflow:hidden;
+  }
+  .col + .col{border-left:1px solid rgba(0,229,255,.3);}
+  .col h3{
+    font-size:11px;letter-spacing:0;text-align:center;
+    border-top:2px solid var(--neon-cyan);
+    box-shadow:0 1px 0 rgba(255,45,149,.6);
+    border-bottom:1px solid rgba(0,229,255,.4);
+    padding:1.5mm 0;margin-bottom:2.2mm;
+    background:var(--paper-dark);
+    color:#fff;
+    text-shadow:0 0 6px rgba(0,229,255,.6);
+  }
+  .col p{
+    font-size:9.4px;line-height:1.95;text-align:justify;text-indent:2em;
+    color:var(--ink);
+  }
+  .col .hl{color:var(--neon-cyan);}
+  .col .more{
+    display:block;text-align:right;font-size:8px;color:var(--neon-pink);
+    margin-top:1.5mm;letter-spacing:0;
+    text-shadow:0 0 5px rgba(255,45,149,.5);
+  }
+
+  /* ===== 底部横条 ===== */
+  .bottom-strip{
+    padding:2.5mm 1mm 0;
+    border-top:1px solid rgba(0,229,255,.3);
+    flex:none;
+  }
+  .cyber-note h3{
+    font-size:10.5px;letter-spacing:0;margin-bottom:1.5mm;
+    color:var(--neon-cyan);font-weight:900;
+    text-shadow:0 0 6px rgba(0,229,255,.7);
+  }
+  .cyber-note p{font-size:9.2px;line-height:1.85;text-align:justify;text-indent:2em;}
+
+  .footer{
+    margin-top:2.2mm;
+    border-top:2px solid var(--neon-cyan);
+    box-shadow:0 -1px 0 rgba(255,45,149,.6);
+    padding-top:1.4mm;
+    display:flex;justify-content:space-between;
+    font-size:7.2px;letter-spacing:0;color:var(--ink-soft);
+    flex:none;
+  }
+
+  /* ===== 打印适配 ===== */
+  @page{size:A4 portrait;margin:0;}
+  @media print{
+    body{padding:0;background:none;}
+    .newspaper{
+      box-shadow:none;
+      width:210mm;height:297mm;
+      page-break-after:avoid;
+    }
+  }
+</style>
+<link href="data:," rel="icon"/><style id="runtime-print-layout">
+@page { size: A4 portrait; margin: 0; }
+html,body { width:210mm!important; height:297mm!important; margin:0!important; padding:0!important; background:transparent!important; }
+body { display:block!important; overflow:hidden!important; }
+#newspaper-root { margin:0!important; width:210mm!important; height:297mm!important; box-shadow:none!important; outline:none!important; }
+* { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; letter-spacing:0!important; }
+.masthead-top { padding-right:18mm; }
+#ai-photo { object-fit:cover!important; object-position:50% 50%!important; filter:none!important; }
+.switch { display:none!important; }
+.hero{grid-template-columns:53% minmax(0,1fr)!important;gap:4mm!important}.hero-figure img{width:100%!important;height:117mm!important}.headline{font-size:28px!important}.lede{font-size:10px!important;line-height:1.8!important}.vertical-poem{font-size:10px!important;line-height:1.6!important;padding-left:1.5mm!important}.col p{font-size:9px!important;line-height:1.75!important}.col h3{font-size:10px!important}.col{padding:2.3mm!important}.footer{font-size:7px!important}.cyber-note p{font-size:8.5px!important}.hero-side{overflow:hidden}
+</style></head>
+<body>
+<div class="newspaper" id="newspaper-root">
+<!-- 报头 -->
+<header class="masthead">
+<div class="masthead-top">
+<span>蓉城文旅 · 时光珍藏</span>
+<span class="tag">赛博特刊 // CYBER-PANDA</span>
+<span>第叁佰陆拾陆期</span>
+</div>
+<h1>蓉城时光印</h1>
+<div class="subtitle">—— 一屏映锦官 · 一码读蓉城 ——</div>
+<div class="seal-stamp">时光印记</div>
+<div class="date-bar">
+<span class="issue">双子塔号 · 霓虹点灯</span>
+<span><time data-live-field="date-time">丙午年九月十一</time> · 交子大道信号满格</span>
+<span>今夜星雨 · 宜登塔瞰城</span>
+</div>
+</header>
+<!-- 主视觉 -->
+<section class="hero">
+<figure class="hero-figure">
+<div class="photo-tag">时光印 · 实拍存档</div>
+<img alt="赛博蓉城·机械少女立于双子塔下" id="ai-photo" src="__PHOTO_URI__"/>
+<div class="scan"></div>
+</figure>
+<div class="hero-side">
+<div class="kicker"><span>本报头条</span><span>赛博纪事</span></div>
+<h2 class="headline">双塔点灯夜<br/>一城<span>赛博</span>风</h2>
+<div class="hero-text-row">
+<p class="lede">
+          夜幕降临，雨丝未歇。交子大道之上，两座二十四百米光柱刺破云层——成都双子塔亮灯了。塔身流光翻涌，一帧"我爱成都"的心形弹幕划过夜空，一只数绘熊猫攀上玻璃幕墙，向全城比出圆滚滚的招呼。桥头，一位装配机械义肢的少女立在霓虹雨幕之中，肩头的电路微光与双塔辉光同频闪烁。老成都的烟火与未来都市的代码，在此刻完成了同框。
+        </p>
+<div class="vertical-poem">
+<div><b>塔</b>立交子　光写蓉城</div>
+<div>霓虹落夜雨</div>
+<div>熊猫上高楼</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 三栏新闻 -->
+<section class="columns">
+<div class="col">
+<h3>双塔纪闻 · 光之塔防</h3>
+<p>
+        双子塔高<span class="hl">两百一十八米</span>，塔身覆盖逾五万平方米LED网格屏，堪称"亚洲最大光影画布"。每晚七点半准时"点灯"：熊猫爬塔、心形告白、星河倒卷轮番上演。据值守工程师透露，塔身动画由算法实时生成，每一秒的画面都<span class="hl">独一无二</span>，如同这座城市的指纹。
+      </p>
+<p style="margin-top:1.5mm;">
+        又讯：交子之环天桥同步焕新，环形灯带随车流呼吸明灭，被夜游市民称为"城市的心电图"。
+      </p>
+<span class="more">——详见第四版《双塔点灯志》</span>
+</div>
+<div class="col">
+<h3>霓虹快报 · 义体时尚</h3>
+<p>
+        昨夜，一位机械臂少女的街拍在蓉城社交网络刷屏。赛博学者指出：这并非科幻——从太古里的汉服混搭机甲外套，到玉林小酒馆旁的电子乐现场，成都本就是<span class="hl">赛博气质浓度最高</span>的中国城市之一。皮衣、义肢、霓虹、雨夜，一帧入镜，半部未来史。
+      </p>
+<p style="margin-top:1.5mm;">
+        提醒：夜拍双塔宜在桥面东南侧取景，积水路面自带"镜面服务器"效果，倒影加分。
+      </p>
+<span class="more">——详见第二版《赛博蓉城生存指南》</span>
+</div>
+<div class="col">
+<h3>数说蓉城 · 夜间协议</h3>
+<p>
+        交子大道商圈夜间消费数据持续攀升，火锅、livehouse与灯光秀构成蓉城夜生活<span class="hl">铁三角</span>。攻略组建议动线：傍晚登交子之环拍日转夜，七点半守双塔点灯，九点转场夜市补给，末班地铁前完成"一环双塔"打卡任务。
+      </p>
+<p style="margin-top:1.5mm;">
+        彩蛋：对塔身大屏喊出"我爱成都"，或许会被随机选中上墙——这座城市的浪漫，始终在线。
+      </p>
+<span class="more">——详见第三版《蓉城夜行手册》</span>
+</div>
+</section>
+<!-- 底部 -->
+<section class="bottom-strip">
+<div class="cyber-note">
+<h3>◆ 赛博小识 · 为何是双子塔</h3>
+<p>
+        在赛博朋克的美学里，未来城市=高塔+霓虹+雨夜+巨型影像。而成都双子塔恰好集齐了全部要素：两百米级的孪生高塔、包裹全身的光电皮肤、不会熄灭的巨型熊猫，再加上一场恰到好处的夜雨。当赛博少女站在塔下回眸，快门响起的瞬间，锦官城三千年的人间烟火，便被写进了未来的存档。来蓉城，登交子，入夜色，做一晚未来人。
+      </p>
+</div>
+</section>
+<footer class="footer">
+<span>蓉城时光印编委会 出品</span>
+<span class="weather">今夜交子：小雨 16℃ · 信号满格 · 幸运色 霓虹青</span>
+<span>印于天府之国</span>
+</footer>
+</div>
+</body>
+</html>

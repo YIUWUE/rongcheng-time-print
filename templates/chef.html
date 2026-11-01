@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>蓉城日报 · 满版通栏版（A4 · 标准字号）</title>
+<style>
+/* 字号标准（印刷磅制换算：1pt=0.3528mm；CSS 1px=0.2646mm）
+   刊名 20pt=27px | 大标题 25pt=34px | 副题 12pt=16px
+   正文 五号 10.5pt=14px | 小栏目 9pt=12px | 页脚 9pt=12px */
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#D8CFBE;display:flex;justify-content:center;padding:28px 0;
+  font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",serif;color:#3E2E20}
+.paper{width:210mm;height:297mm;background:#E9DCC2;overflow:hidden;position:relative;
+  display:flex;flex-direction:column}
+.paper::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(#CBB894 1px,transparent 1.2px);background-size:4mm 4mm;opacity:.5}
+/* ---------- 报头条 ---------- */
+.topbar{background:#3E2E20;color:#F1E8D8;padding:7px 11mm;display:flex;
+  justify-content:space-between;align-items:center}
+.topbar .name{font-weight:900;font-size:27px;letter-spacing:0}
+.topbar .name i{font-style:normal;color:#E0864A}
+.topbar .issue{font-size:12px;letter-spacing:0;color:#CBB894;font-weight:700}
+/* ---------- 照片：出血、零文字 ---------- */
+.hero{height:146mm;overflow:hidden;background:#3E2E20;position:relative}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+/* ---------- 标题通栏带 ---------- */
+.titleband{background:#A03A28;color:#FDF6E8;padding:10px 11mm 12px}
+.titleband .kick{font-size:12px;font-weight:700;letter-spacing:0;color:#F3C89A;margin-bottom:6px}
+.titleband h1{font-weight:900;font-size:34px;line-height:1.3;letter-spacing:0}
+.titleband h1 em{font-style:normal;color:#FFD9A0}
+.titleband .deck{font-size:16px;letter-spacing:0;color:#F7DCC0;margin-top:7px;font-weight:700}
+/* ---------- 三栏正文（五号 14px） ---------- */
+.cols{padding:8mm 11mm 0;column-count:3;column-gap:8mm;column-rule:1px solid #C6B189;
+  font-size:14px;line-height:1.8;color:#4A3A28;text-align:justify;flex:1}
+.cols p{margin-bottom:8px}
+.cols b{color:#A03A28}
+.cols .lb{display:block;font-weight:900;letter-spacing:0;color:#7A5A36;
+  border-bottom:1px solid #C6B189;padding-bottom:2px;margin-bottom:4px;font-size:13px}
+/* ---------- 数据条 ---------- */
+.stats{margin:0 11mm;display:flex;border:1.5px solid #B79C6E;background:#F3E9D2}
+.stats .s{flex:1;padding:8px 9px;border-right:1px solid #D6C09A;text-align:center}
+.stats .s:last-child{border-right:0}
+.stats .s b{display:block;font-size:22px;color:#A03A28;font-weight:900;line-height:1.25}
+.stats .s span{font-size:12px;color:#7A6A4E;letter-spacing:0}
+/* ---------- 谚语条 ---------- */
+.quote{margin:8px 11mm 0;background:#3E2E20;color:#F1E8D8;padding:10px 14px;
+  font-size:16px;font-weight:700;letter-spacing:0;display:flex;align-items:center;gap:9px}
+.quote .mark{color:#E0864A;font-size:24px;font-family:Georgia,serif}
+.quote span{display:block;font-size:12px;color:#C0AE90;font-weight:400;letter-spacing:0;margin-top:4px}
+/* ---------- 页脚 ---------- */
+.foot{margin-top:auto;padding:8px 11mm 9mm;border-top:2.5px solid #A03A28;display:flex;
+  justify-content:space-between;font-size:12px;font-weight:700;color:#6E5B3E;letter-spacing:0}
+.foot .r{color:#A03A28}
+@media print{body{padding:0;background:#fff}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<link href="data:," rel="icon"/><style id="runtime-print-layout">
+@page { size: A4 portrait; margin: 0; }
+html,body { width:210mm!important; height:297mm!important; margin:0!important; padding:0!important; background:transparent!important; }
+body { display:block!important; overflow:hidden!important; }
+#newspaper-root { margin:0!important; width:210mm!important; height:297mm!important; box-shadow:none!important; outline:none!important; }
+* { -webkit-print-color-adjust:exact!important; print-color-adjust:exact!important; letter-spacing:0!important; }
+.masthead-top { padding-right:18mm; }
+#ai-photo { object-fit:cover!important; object-position:50% 50%!important; filter:none!important; }
+.switch { display:none!important; }
+.hero{height:128mm!important;flex:none!important}.hero img{width:100%!important;height:100%!important}.foot{font-size:9px!important;gap:3mm;flex:none!important}
+</style></head>
+<body>
+<div class="paper" id="newspaper-root">
+<div class="topbar">
+<div class="name">蓉城<i>日报</i></div>
+<div class="issue">VOL.38 · <time data-live-field="date-time">2026.10.20</time> · 灶台特刊</div>
+</div>
+<div class="hero">
+<img alt="农家老灶房掌勺" id="ai-photo" src="__PHOTO_URI__"/>
+</div>
+<div class="titleband">
+<div class="kick">柴 火 灶 特 刊</div>
+<h1>一口柴火灶，炒出半部<em>川菜史</em></h1>
+<div class="deck">回锅肉：我的江湖地位，无需多言</div>
+</div>
+<div class="cols">
+<p><span class="lb">身 世</span>祭祀用的方肉煮完祭祖，捞回来下锅再炒，一不小心炒成<b>川菜人气王</b>。二刀后腿带皮、郫县豆瓣、蒜苗，肉片炒出"灯盏窝"。</p>
+<p><span class="lb">锅 气</span>柴火舔着锅底，铁锅受热均匀，那口从灶膛里烧出来的锅气，是燃气灶永远复刻不来的乡愁。</p>
+<p><span class="lb">规 矩</span>灶门朝南或朝西，忌正对大路与房门。新灶落成要"进火"，邻里上门吃第一锅。</p>
+<p><span class="lb">三 件 宝</span>铁锅聚气锁汁，柴火猛灶生香，郫县豆瓣三年发酵定魂，三样齐了川菜的根就立住了。</p>
+<p><span class="lb">副 业</span>灶灰里埋红薯，锅底刮锅巴，养活了一代四川娃的零食清单。</p>
+<p><span class="lb">地 位</span>2003 年四川大众菜品评选，回锅肉高票夺魁。川人待客头一道必是它。</p>
+</div>
+<div class="stats">
+<div class="s"><b>2003</b><span>大众评选夺魁</span></div>
+<div class="s"><b>三年</b><span>郫县豆瓣发酵</span></div>
+<div class="s"><b>二刀</b><span>后腿带皮部位</span></div>
+<div class="s"><b>灯盏窝</b><span>肉片终极形态</span></div>
+</div>
+<div class="quote">
+<span class="mark">“</span>
+<div>入蜀不吃回锅肉，等于没到四川。<span>—— 四川谚语 · 本报不给它辩驳的机会</span></div>
+</div>
+<div class="foot">
+<div>蓉城日报 · 编辑部 · 烟火气研究中心</div>
+<div class="r">本报表扬一切认真做饭的人 · 锅气永续</div>
+</div>
+</div>
+</body>
+</html>
